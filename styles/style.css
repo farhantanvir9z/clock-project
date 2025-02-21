@@ -55,6 +55,17 @@ header nav ul {
   align-items: center;
   /* background-color: pink; */
 }
+header nav ul {
+  height: 150px;
+  width: 100%;
+  margin-top: 10px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background-color: pink; */
+}
 header nav ul li:nth-child(1) {
   background-color: mediumseagreen;
 }
@@ -76,8 +87,9 @@ header nav ul li a {
   align-items: center;
 }
 main {
-  height: 60%;
+  height: calc(100% - 200px);
   width: 100%;
+  margin-bottom: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,20 +98,33 @@ main {
 .parent-display {
   position: relative;
 }
-.displayTime {
+.display-time {
+  height: auto;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px 0px #6e6d6c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-evenly;
+}
+.display-time1 {
   height: 100px;
   width: 300px;
   font-size: 40px;
   font-weight: 900;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px 0px #6e6d6c;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-image : linear-gradient(to right, #fc466b, #3F5EFB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.displayTime input {
+.display-time input {
   width: 25%;
   height: 70%;
   font-size: 32px;
@@ -108,6 +133,9 @@ main {
   place-items: center;
   border: 0.5px solid #80808019;
   background-color: #fff;
+  background-image : linear-gradient(to right, #fc466b, #3F5EFB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   border-radius: 10px;
 }
 .formatting-hours {
@@ -138,4 +166,43 @@ main {
   background-color: #fff;
   border-top-right-radius: 7px;
   border-bottom-right-radius: 7px;
+}
+.display-date {
+  background-color: #d3d3d31f;
+  padding: 10px ;
+  text-align: right;
+  background-image : linear-gradient(to right, #fc00fc, #00dbde);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer {
+  background-color: #faebd7;
+  box-shadow: 0px 1.5px 3px 0px black;
+  height: 150px;
+  padding-top: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
+  align-items: center;
+}
+.u {
+  text-decoration: underline;
+  font-style: italic;
+  color: dodgerblue;
+}
+footer img {
+  height: 30px;
+  width: 30px;
+}
+#gh-logo {
+  height: 50px;
+  width: 50px;
+}
+.social-media-links {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
 }
