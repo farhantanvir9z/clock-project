@@ -1,7 +1,7 @@
 let date;
 function toogleMenu() {
   const header = document.getElementById("header");
-  header.style.height = (header.style.height === "60px") ? "210px" : "60px"
+  header.style.height = (header.style.height === "60px") ? "210px" : "60px";
 }
 const seconds = 1000
 const minute = seconds * 60;
