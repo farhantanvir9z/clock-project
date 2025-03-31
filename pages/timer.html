@@ -7,15 +7,13 @@
   <title>Timer</title>
   <link rel="icon" href="../images/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/timer.css">
 </head>
 <body>
-  <header id="header">
+  <header id="header" class="header">
     <nav>
-      <div class="nav-img">
         <img src="../images/logo.png" alt="Clock Image">
         <i class="fa-solid fa-bars"onclick="toogleMenu()"></i>
-      </div>
       
       <ul>
         <li><a href="../index.html">Clock</a></li>
@@ -25,30 +23,49 @@
     </nav>
   </header>
   
-  <main>
-    <div class="parent-display">
-      <div class="display-time">
-        <div class="display-time1" id="displayTime">
-        
-     <input type="text" name="hour" id="hour" disabled="disabled">
-    :
-    <input type="text" name="minute" id="minute" disabled="disabled">
-    :
-    <input type="text" name="second" id="second" disabled="disabled">
-  
-  
-  
-    </div>
-    <p class="display-date" id="displayDate"></p>
+  <main class="main">
+    <button onclick="showDialogBox()" class="timerSetting">Set timer</button>
+   <div class="timer-container">
+     <div class="timer">
+      <div class="timer-box">
+        <input type="text" class="timerDisplayer" id="displayHour" disabled="disabled" value="00"> 
+      </div> :
+      <div class="timer-box">
+     <input type="text" class="timerDisplayer" id="displayMinutes" disabled="disabled" value="00">
+      </div> :
+      <div class="timer-box">
+     <input type="text" class="timerDisplayer" id="displaySeconds" disabled="disabled" value="00">
       </div>
-      <div class="formatting-hours">
-    <div id="am">AM</div>
-    <div id="pm">PM</div>
-  </div>
- </div>
+     </div>
+    
+   </div>
+   <img src="../images/play_button.png" onclick="toggleImage()" id="play-pause" role="button">
+   
+  <dialog id="dialogBox">
+    <div class="message">
+      <div class="set-time">
+       <div>
+        <input type="number" name="" id="inputHour" class="input-time">
+        <span>Hours</span>
+       </div>
+       <div>
+        <input type="number" name="" id="inputMinutes" class="input-time">
+        <span>Minutes</span>
+       </div>
+       <div>
+        <input type="number" name="" id="inputSeconds" class="input-time">
+         <span>Seconds</span>
+       </div>
+      </div>
+      <p id="errorMessage"></p>
+      <div class="buttons">
+        <button onclick="displayTime()">Set</button>
+        <button onclick="closeDialogBox()">close</button>
+      </div>
+    </div>
+  </dialog>
   </main>
-  
-  <footer>
+  <footer class="footer">
     <p>Made with &hearts; by <br>
     <a href="https://www.linkedin.com/in/farhantanvir9z">
      <span class="u">Farhan</span></a>
@@ -57,7 +74,7 @@
       <a href="https://www.github.com/farhantanvir9z"><img src="../images/github_logo.png" alt="Github logo" id="gh-logo"></a>
   <a href="https://www.facebook.com/profile.php?id=61559513533330" >
     <img src="../social-media-image/facebook_logo.png" alt="Facebook Logo">
-    </a> 
+q    </a> 
   <a href="https://x.com/farhantanvir9z" >
     <img src="../social-media-image/x_logo_black.png" alt="X Logo">
     </a> 
@@ -67,6 +84,6 @@
     </div>
   
   </footer>
-  <script src="../scripts/script.js" defer></script>
+  <script src="../scripts/timer.js" defer></script>
 </body>
 </html>
