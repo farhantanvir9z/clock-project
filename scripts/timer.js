@@ -5,7 +5,8 @@ const displayHour = document.getElementById("displayHour");
   const displayMinute = document.getElementById("displayMinutes");
   const displaySecond = document.getElementById("displaySeconds");
  const dialogBox = document.getElementById("dialogBox");
- let inputHour, inputMinute, inputSecond, totalTimeInMs, intervalId;
+ const timerSound = document.getElementById("audio");
+ let inputHour = 0, inputMinute = 0, inputSecond = 0, totalTimeInMs, intervalId;
 function toogleMenu() {
   const header = document.getElementById("header");
   header.style.height = (header.style.height === "60px") ? "210px" : "60px" ;
@@ -45,25 +46,20 @@ function updateDisplay() {
   displayMinute.value = String(Math.floor((remainingTime % hour) / minutes)).padStart(2, '0');
   displaySecond.value = String(Math.floor((remainingTime % minutes) / seconds)).padStart(2, '0');
 }
-// function updateDisplay() {
-//   let remainingTime = totalTimeInMs;
-//   displayHour.value = Math.floor((remainingTime / hour)) % 24 ;
-//   displayMinute.value = Math.floor((remainingTime / minutes)) % 60;
-//   displaySecond.value = Math.floor((remainingTime / seconds)) % 60;
-// }
+
 function countDownStart() {
  if (totalTimeInMs <= 0) {
    clearInterval(intervalId);
+   timerSound.play();
    isCountDownRunning = false;
    return;
  } else {
-   console.log(intervalId);
    totalTimeInMs -= seconds;
    updateDisplay();
  }
 }
 function countDownStop() {
- clearInterval(intervalId) 
+ clearInterval(intervalId);
 }
 let isCountDownRunning = false;
 function toggleCountDown() {
